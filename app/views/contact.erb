@@ -1,0 +1,13 @@
+<div class="container">
+<h2>Send Message to User</h2>
+
+<form action='/message/<%= @user.id %>' method="post">
+<p>Contact <%= @user.firstname %></p>
+<input type="text" name="message" value="Hi <%= @user.firstname %> I would like to schedule a game on">
+<br>
+<h2> When would you like to play?</h2>
+<input type="datetime-local" name="playtime">
+  <input type="submit" class="contact">
+</form>
+
+</div>

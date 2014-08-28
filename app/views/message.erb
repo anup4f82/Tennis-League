@@ -1,0 +1,24 @@
+<div class="container">
+
+<% if current_user %>
+<% @messages.all.each_with_index do |x,idx| %>
+<div class="res">
+<p><%= "#{idx+1}.  Message:  #{x.message}" %>
+<br>
+<br>
+<%= "Time proposed:  #{x.time_proposed}" %>
+<br><br>
+<form action="/reminder/<%= x.id %>" method="post">
+<input type="radio" name="response" value="yes">Yes<br><br>
+<input type="radio" name="response" value="no">No<br><br>
+<input type="submit" class="resp">
+</p>
+</div>
+
+<br>
+<br>
+</form>
+<% end %>
+<% end %>
+
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <link href='http://fonts.googleapis.com/css?family=Signika:400,300,600,700' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+  <title>Welcome to tennis</title>
+</head>
+<nav>
+    <div class="title"><a href="/">Welcome to Tennis</a>
+  </div>
+  <!-- <img src="/images/show_image_248.jpeg"> -->
+    <% if (current_user) %>
+      <div class="signup">
+      <form id="profile" action="/user/<%= current_user.id %>" method = "get">
+  <input type="submit" value="Edit Profile" style="padding-right:10px;background-color:orange;color:black;">
+  </form>
+  <br>
+      <form id="sign-out" action="/sign-out/<%= current_user.id %>" method = "post">
+      <input name="_method" type="hidden" value="delete" />
+      <input type="submit" value="Log Out" style="padding-right:10px;background-color:orange;color:black;">
+     </form>
+      </div>
+       <div id="weluser">
+       <h4>Welcome,<%= current_user.firstname %></h4>
+       </div>
+      <div id="links">
+    <% m = Message.where(user_id:current_user.id) %>
+     <% message = 0 %>
+     <% m.each do |x| %>
+     <% message+=1 %>
+     <% end %>
+     <a href="/messages/<%= current_user.id %>" style="padding-right:40px;" >Messages(<%= message %>)</a>
+     <a href="/user/<%= current_user.id %>/score" style="padding-right:40px;">Submit Score</a>
+     <a href="/advanced" style="padding-right:20px;" style="padding-right:40px;">Advanced</a>
+     <a href="/comp" style="padding-right:20px;" style="padding-right:40px;">Competetive</a>
+     </div>
+     
+      <% else %>
+       <div class="signin">
+       <a href="/sign-in" style="padding-right:10px;">Log In</a>
+      <a href="/sign-up" style="padding-right:10px;">Join</a>
+      </div>
+     <% end %>
+   
+  </div>
+ </nav>
+<body>
+  <%= yield %>
+</body>
+</html>

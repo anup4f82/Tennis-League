@@ -1,0 +1,21 @@
+<div class="container">
+
+<% if current_user %>
+<h2>Welcome, <%=current_user.firstname %></h2>
+<p> Thanks for joining.You may contact players by clicking on Advanced or Competitive links and start playing</p>
+<p> A Text reminder will be sent if the player accepts your invitation.You can Submit Scores once you finish a game via the site and watch your progress</p>
+<% else %>
+
+<img src="/images/download1.jpeg">
+<img src="/images/balls.jpeg">
+<img src="/images/download.jpeg">
+
+
+<div class="welcome">
+<p>Welcome, to Tennis League. Thanks for visiting the site. Register with us and connect with tennis players. Once you sign-in you can contact players through the site and get automatic text reminders once you schedule games. Submit Scores and watch your progress. Sign up to get started. Have fun on the courts! </p>
+</div>
+
+
+
+<% end %>
+</div>

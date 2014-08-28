@@ -1,0 +1,131 @@
+.container {
+  margin: 100px auto;
+  width: 1000px;
+  padding: 0px 20px 20px 20px;
+  color: white;
+  /*border: 1px dotted black;*/
+}
+
+.container h1 {
+  font-size: 17pt;
+
+}
+.fields1{
+  margin-top: -50px;
+  margin-left: -10px;
+  float:left;
+}
+.join{
+  margin-top: 10px;
+  margin-left: -10px;
+  float:left;
+}
+.welcome {
+
+  float:right;
+  margin-top:100px;
+
+}
+#score {
+float:right;
+   }
+
+.ind {
+  margin-top: 50px;
+}
+#weluser {
+  margin-top: -50px;
+  color:orange;
+}
+nav .title {
+background-image: url("/images/header2.jpg");
+
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+font-size:30px;
+font-weight:bold;
+color:orange;
+text-align:center;
+padding: 5px;
+height:120px;
+padding-right:20px
+}
+
+a:link{color:orange; text-decoration: none}
+a:hover{color:blue;}
+a:visited{color:orange;}
+a:active{color:orange;}
+
+/*body {
+    
+}*/
+
+
+
+nav .list{
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 300px;
+}
+
+nav .signup{
+font-size: 15px;
+margin-top: -110px;
+margin-left:1120px;
+
+}
+
+nav .signin{
+font-size: 25px;
+margin-top: -110px;
+margin-left:1150px;
+
+}
+
+
+nav #links{
+font-size: 18px;
+margin-top: -15px;
+margin-left: 450px;  
+color:orange;
+
+}
+
+#submit {
+    background-color:black;
+    border-radius:5px;
+    color: orange;
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
+
+
+.label, label.inline {
+    display: inline-block;
+    width: 100px;
+    padding-bottom: 25px;
+}
+
+body{
+   
+  background-image:url("/images/RG_2011_Background_1.jpg"); 
+  background-size: cover;
+  width:100%;
+  font-size: 20px;
+  font-family: 'Signika', sans-serif;  
+font-size: 20px;
+color: white;
+
+
+
+}
+
+
+
+
+

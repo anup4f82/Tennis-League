@@ -1,0 +1,92 @@
+<div class="container">
+
+<form action="/user/<%= current_user.id%>/score" method="POST">
+
+Winning Player:<select name="win">
+<% @users.each do |x| %>
+<option value="<%= x.id %>"><%= x.firstname %></option> 
+<% end %>
+</select>
+&nbsp
+&nbsp
+&nbsp
+
+Losing Player :<select name="loss">
+<% @users.each do |x| %>
+<option value="<%= x.id %>"><%= x.firstname %></option> 
+<% end %>
+</select>
+&nbsp
+&nbsp
+
+<h2>Score:</h2>	
+
+<h3>First Set</h3><select name="first_one">
+  <option value="6">6</option> 
+  <option value="5">5</option> 
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+  <option value="0">0</option>
+</select>
+<select name="first_two">
+  <option value="6">6</option> 
+  <option value="5">5</option> 
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+  <option value="0">0</option>
+</select>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<h3>Second Set</h3><select name="second_one">
+ <option value="6">6</option> 
+  <option value="5">5</option> 
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+  <option value="0">0</option>
+</select>
+<select name="second_two">
+ <option value="6">6</option> 
+  <option value="5">5</option> 
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+  <option value="0">0</option>
+</select>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<h3>Third Set</h3><select name="third_one">
+  <option value="6">6</option> 
+  <option value="5">5</option> 
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+  <option value="0">0</option>
+</select>
+<select name="third_two">
+ <option value="6">6</option> 
+  <option value="5">5</option> 
+  <option value="4">4</option>
+  <option value="3">3</option>
+  <option value="2">2</option>
+  <option value="1">1</option>
+  <option value="0">0</option>
+</select>
+<br>
+<br>
+<input type="submit" value="Submit Score" class="scoresubmit">
+</form>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+	
+	<% if @advanced %>
+	<h1>Advanced League Player Listing:</h1>
+	<table  border="10">
+		
+		<col width="80">
+		<col width="100">
+		<col width="60">
+		<col width="60">
+	<tr>
+	
+	<td><strong>Name</strong></td>
+	<td><strong>Email</strong></td>
+	<td><strong>No of Wins</strong></td>
+	<td><strong>No of matches</strong></td>
+
+	</tr>
+	
+	<% @advanced.each do |x| %>
+     
+<td><a href="/user/<%= x.id %>"><%= x.firstname %> <% x.lastname %></a></td>
+	 <td><%= x.email %></td>
+	<td><%= x.noofwins%></td>
+	<td> <%= x.noofmatches %></td>
+  </tr>
+
+	<% end %>
+	<% end %>
+</table>
+	<% if @comp %>
+	<h1>Competitive League Player Listing:</h1>
+	<table  border="10">
+		
+		<col width="80">
+		<col width="100">
+		<col width="60">
+		<col width="60">
+	<tr>
+	
+	<td><strong>Name</strong></td>
+	<td><strong>Email</strong></td>
+	<td><strong>No of Wins</strong></td>
+	<td><strong>No of matches</strong></td>
+
+	</tr>
+	<% @comp.each do |x| %>
+
+	<td><a href="/user/<%= x.id %>"><%= x.firstname %> <% x.lastname %></a></td>
+	 <td><%= x.email %></td>
+	<td><%= x.noofwins%></td>
+	<td> <%= x.noofmatches %></td>
+   </tr>
+
+	<% end %>
+	<% end %>
+    </table>
+  

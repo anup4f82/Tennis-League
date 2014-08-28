@@ -1,0 +1,103 @@
+<div class="container">
+<div class="fields1">
+    <% if current_user.id == @user.id %>
+    <h1><%= "#{@user.firstname}'s Profile" %></h1>
+   
+   <form id="edit" method="post" action="/user/<%= @user.id %>">
+    <label class="label" for="username">Username</label>
+    <input type="text" name="username" value=<%= @user.username %>><br>
+   <label class="label" for="password">Password</label>
+    <input type="password" name="password" value=<%= @user.password_hash %>><br>
+    <label class="label" for="firstname">First Name</label>
+    <input type="text" name="firstname" value=<%= @user.firstname %>>
+    <br>
+    <label class="label" for="lastname">Last Name</label>
+    <input type="text" name="lastname" value=<%= @user.lastname %>>
+    <br>
+     <label class="label" for="email">Email</label>
+    <input type="text" name="email" value=<%= @user.email %>>
+    <br>
+     <label class="label" for="phone">Phone</label>
+    <input type="text" name="phone" value=<%= @user.phone %>>
+    <br>
+    <label class="label" for="address">Address</label>
+    <input type="text" name="address" value=<%= @user.address %>>
+    <br>
+   <label class="label" for="city">City</label>
+    <input type="text" name="city" value=<%= @user.city %>>
+   <br>
+     <label class="label" for="state">State</label>
+    <input type="text" name="state" value=<%= @user.state %>>
+    <br>
+    <label class="label" for="zip">Zip</label>
+    <input type="text" name="zip" value=<%= @user.zip %>>
+    <br>
+   <label class="label" for="rating">Player Rating</label>
+    <input type="text" name="rating" value=<%= @user.rating %>>
+   <input type="submit" value="EDIT" class="editprofile">
+    <% if @success %>
+      <h4>Profile updated successfully!</h4>
+   <% end %>
+   </form>
+   
+</div>
+  <div class="fields1"> 
+   <% else %>
+   <form id="contact" method="post" action= "/contact/<%= @user.id %>">
+     <input type="submit" value="Contact & Play" id="submit">
+      </form>
+    <h1><%= "#{@user.firstname}'s Profile" %></h1>
+    <label class="label" for="firstname">First Name</label>
+    <input type="text" name="firstname" value=<%= @user.firstname %>>
+    <br>
+    <label class="label" for="lastname">Last Name</label>
+    <input type="text" name="lastname" value=<%= @user.lastname %>>
+    <br>
+     <label class="label" for="email">Email</label>
+    <input type="text" name="email" value=<%= @user.email %>>
+    <br>
+     <label class="label" for="phone">Phone</label>
+    <input type="text" name="phone" value=<%= @user.phone %>>
+    <br>
+    <label class="label" for="address">Address</label>
+    <input type="text" name="address" value=<%= @user.address %>>
+    <br>
+   <label class="label" for="city">City</label>
+    <input type="text" name="city" value=<%= @user.city %>>
+   <br>
+     <label class="label" for="state">State</label>
+    <input type="text" name="state" value=<%= @user.state %>>
+    <br>
+    <label class="label" for="zip">Zip</label>
+    <input type="text" name="zip" value=<%= @user.zip %>>
+    <br>
+     <label class="label" for="rating">Rating</label>
+    <input type="text" name="rating" value=<%= @user.rating %>>
+    <br>
+  
+     <!-- <label class="label" for="location">Preferred courts</label>
+    <input type="text" name="location" value=<%= @user.location %>>
+    <br>
+     <label class="label" for="day">Preferred days</label>
+    <input type="text" name="day" value=<%= @user.day %>>
+    <br>
+      <label class="label" for="player">Favourite Player</label>
+    <input type="text" name="player" value=<%= @user.player %>>
+    <br>
+       <label class="label" for="shot">Favourite Shot</label>
+    <input type="text" name="shot" value=<%= @user.shot %>> -->
+   </div>
+     <% end %>
+     <div id="score">
+    <h3>Latest Scores</h3>
+   
+    <% @scores.each do |x| %>
+    <%= x.content %>
+    <br>
+    <br>
+    <% end %>
+ 
+</div>
+
+ 
+
